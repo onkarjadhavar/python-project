@@ -33,3 +33,28 @@ Then open `http://127.0.0.1:5000` in your browser.
 
 - This summarizer uses a simple frequency-based algorithm and works best on pages with readable article text.
 - If a site blocks scraping or requires JavaScript, the summary may fail.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...../
