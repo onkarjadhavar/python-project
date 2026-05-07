@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpage Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Webpage Summarizer</h1>
+        <p>Paste any web page URL and get a quick summary of its visible text.</p>
+      </header>
+
+      <form action="/" method="post" class="url-form">
+        <label for="url">Website URL</label>
+        <input type="text" id="url" name="url" placeholder="https://example.com" value="{{ url | e }}" required />
+        <button type="submit">Summarize</button>
+      </form>
+
+      {% if error %}
+      <div class="message error">{{ error }}</div>
+      {% endif %}
+
+      {% if summary %}
+      <section class="summary">
+        <h2>Summary</h2>
+        <ol>
+          {% for sentence in summary %}
+          <li>{{ sentence }}</li>
+          {% endfor %}
+        </ol>
+      </section>
+      {% endif %}
+
+      <footer>
+        <p>Built with Flask, Requests, and BeautifulSoup.</p>
+      </footer>
+    </main>
+  </body>
+</html>
