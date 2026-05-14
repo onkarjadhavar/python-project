@@ -3,40 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpage Summarizer by oj </title>
+    <meta name="description" content="Transform any webpage into intelligent, concise summaries with AI-powered technology." />
+    <title>Webpage Summarizer</title>
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <main class="container">
-      <header>
-        <h1>Webpage Summarizer By oj</h1>
-        <p>Paste any web page URL and get a quick summary of its visible text.</p>
+    <!-- Animated Background Elements -->
+    <div class="background-elements">
+      <div class="gradient-blob blob-1"></div>
+      <div class="gradient-blob blob-2"></div>
+      <div class="gradient-blob blob-3"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+      <!-- Header Section -->
+      <header class="hero-header">
+        <div class="header-content">
+          <div class="hero-avatar">
+            <img src="/static/team-avatar.svg" alt="Team project avatar" />
+          </div>
+          <h1 class="hero-title">Webpage Summarizer</h1>
+          <p class="hero-subtitle">Transform any webpage into intelligent, concise summaries instantly</p>
+          <div class="team-card">
+            <p class="team-label">Project built by the following team:</p>
+            <ul class="team-list">
+              <li>1) Onkar</li>
+              <li>2) Shailesh</li>
+              <li>3) Aarya</li>
+            </ul>
+          </div>
+        </div>
       </header>
 
-      <form action="/" method="post" class="url-form">
-        <label for="url">Website URL</label>
-        <input type="text" id="url" name="url" placeholder="https://example.com" value="{{ url | e }}" required />
-        <button type="submit">Summarize</button>
-      </form>
+      <!-- Main Content Container -->
+      <div class="content-container">
+        <!-- Input Section with Glassmorphism -->
+        <div class="glass-card input-card">
+          <form action="/" method="post" class="url-form" id="summarizerForm">
+            <div class="form-group">
+              <label for="url" class="form-label">
+                <span class="label-text">Enter Website URL</span>
+                <span class="label-badge">Required</span>
+              </label>
+              <div class="input-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M2 12h20"></path>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <input
+                  type="url"
+                  id="url"
+                  name="url"
+                  class="modern-input"
+                  placeholder="https://example.com"
+                  value="{{ url | e }}"
+                  required
+                  aria-label="Website URL input"
+                />
+              </div>
+            </div>
 
-      {% if error %}
-      <div class="message error">{{ error }}</div>
-      {% endif %}
+            <button type="submit" class="premium-button" aria-label="Summarize webpage">
+              <span class="button-text">Summarize Now</span>
+              <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
 
-      {% if summary %}
-      <section class="summary">
-        <h2>Summary</h2>
-        <ol>
-          {% for sentence in summary %}
-          <li>{{ sentence }}</li>
-          {% endfor %}
-        </ol>
-      </section>
-      {% endif %}
+        <!-- Error Message Section -->
+        {% if error %}
+        <div class="alert-container alert-error" role="alert">
+          <div class="alert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="alert-content">
+            <h3 class="alert-title">Unable to Process</h3>
+            <p class="alert-message">{{ error }}</p>
+          </div>
+        </div>
+        {% endif %}
 
-      <footer>
-        <p>Built with Flask, Requests, and BeautifulSoup.</p>
+        <!-- Summary Section with Glassmorphism -->
+        {% if summary %}
+        <div class="glass-card summary-card">
+          <div class="summary-header">
+            <h2 class="summary-title">AI-Generated Summary</h2>
+            <span class="summary-badge">{{ summary | length }} points</span>
+          </div>
+
+          <ol class="summary-list">
+            {% for sentence in summary %}
+            <li class="summary-item">
+              <span class="summary-number">{{ loop.index }}</span>
+              <p class="summary-text">{{ sentence }}</p>
+            </li>
+            {% endfor %}
+          </ol>
+
+          <div class="summary-footer">
+            <p class="footer-text">Summary generated from: <strong>{{ url | e }}</strong></p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="modern-footer">
+        <div class="footer-content">
+          <p class="footer-text">Powered by Flask • BeautifulSoup • Advanced NLP</p>
+          <p class="footer-year">© 2026 Webpage Summarizer. All rights reserved.</p>
+        </div>
       </footer>
     </main>
+
+    <!-- Minimal JavaScript for Enhanced UX -->
+    <script src="/static/script.js" defer></script>
   </body>
 </html>

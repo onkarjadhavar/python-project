@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Project Logo</title>
+  <desc id="desc">Modern logo representing a webpage summarizer and team project</desc>
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.92" />
+    </radialGradient>
+    <linearGradient id="docGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+  <circle cx="150" cy="150" r="145" fill="url(#bgGradient)" />
+  <path d="M90 80 h90 l30 30 v110 a20 20 0 0 1 -20 20 h-100 a20 20 0 0 1 -20 -20 v-120 a10 10 0 0 1 10 -10 z" fill="url(#docGradient)" stroke="#e2e8f0" stroke-width="3" />
+  <path d="M180 80 v30 h30" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round" />
+  <path d="M105 120 h90" fill="none" stroke="#475569" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+  <path d="M105 150 h70" fill="none" stroke="#475569" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+  <path d="M105 180 h55" fill="none" stroke="#475569" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+  <circle cx="210" cy="190" r="30" fill="#0f172a" opacity="0.85" />
+  <circle cx="210" cy="190" r="22" fill="#60a5fa" opacity="0.95" />
+  <path d="M226 206 l25 25" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+  <path d="M226 204 l24 24" stroke="#0f172a" stroke-width="6" stroke-linecap="round" />
+  <circle cx="210" cy="190" r="9" fill="#0f172a" />
+  <circle cx="150" cy="150" r="118" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3" />
+  <circle cx="150" cy="150" r="140" fill="none" stroke="#38bdf8" stroke-opacity="0.08" stroke-width="8" />
+</svg>
